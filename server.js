@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const bcrypt = require('bcrypt');
+//const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const DayModel = require('./models/dayModel');
 const cors = require('cors');
@@ -44,10 +44,10 @@ app.get('/api/days', async (req, res) => {
 });
 
 //Register
-app.post('/api/register', async (req, res) => {
+/*app.post('/api/register', async (req, res) => {
     try {
       const { username, password } = req.body;
-      const hashedPassword = await bcrypt.hash(password, 10);
+      //const hashedPassword = await bcrypt.hash(password, 10);
   
       const newUser = new UserModel({ username, password: hashedPassword });
       await newUser.save();
@@ -85,7 +85,7 @@ app.post('/api/login', async (req, res) => {
       res.status(500).json({ error: 'Internal Server Error' });
     }
   });
-
+*/
 
 // Route to add a day
 app.post('/api/days', async (req, res) => {
